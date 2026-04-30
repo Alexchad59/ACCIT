@@ -1,0 +1,6 @@
+## Stream Timeout Prevention
+1. Do each numbered task ONE AT A TIME.
+2. Never write a file longer than ~150 lines in a single tool call.
+3. Start a fresh session if the conversation gets long (20+ tool calls).
+4. Keep individual grep/search outputs short.
+5. If you hit the timeout, retry the same step in a shorter form.

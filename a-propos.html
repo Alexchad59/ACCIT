@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — ACCIT</title>
+  <meta name="description" content="Alexandre Chadenat, ingénieur IT avec 20 ans d'expérience (IBM, Capgemini, Decathlon). ACCIT apporte aux PME l'expertise des grandes structures, à leur mesure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Profil photo ── */
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .profile-photo-wrap {
+      position: sticky;
+      top: 100px;
+    }
+    .profile-photo {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: block;
+    }
+    .profile-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-lg);
+      border: 2px dashed var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted);
+      font-size: .875rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .profile-name {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      line-height: 1.15;
+      margin-bottom: .35rem;
+    }
+    .profile-title {
+      font-size: 1.05rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .profile-bio p {
+      color: var(--color-muted);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── Timeline parcours ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+    /* 3 colonnes : date | axe (dot + ligne) | contenu */
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 30px 1fr;
+      gap: 0 1rem;
+      padding-bottom: 2rem;
+    }
+    .timeline-date {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      text-align: right;
+      padding-top: .15rem;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+    /* Colonne du milieu : dot en haut, ligne verticale en dessous */
+    .timeline-stem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 0 2px var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+      z-index: 1;
+    }
+    .timeline-line {
+      width: 2px;
+      flex: 1;
+      background: var(--color-border-subtle);
+      margin-top: 5px;
+      min-height: 16px;
+    }
+    .timeline-item:last-child .timeline-line {
+      display: none;
+    }
+    .timeline-content {
+      padding-bottom: .25rem;
+    }
+    .timeline-company {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-primary);
+      margin-bottom: .2rem;
+    }
+    .timeline-role {
+      font-size: .875rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: .45rem;
+    }
+    .timeline-desc {
+      font-size: .875rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+    /* Sous-rôles pour entrées groupées (ex. Decathlon) */
+    .timeline-subroles {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-left: 2px solid var(--color-border-subtle);
+      padding-left: 1rem;
+    }
+    .timeline-subrole-period {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--color-muted);
+      margin-bottom: .15rem;
+    }
+    .timeline-subrole-role {
+      font-size: .875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: .3rem;
+    }
+    .timeline-subrole-desc {
+      font-size: .85rem;
+      color: var(--color-muted);
+      line-height: 1.65;
+    }
+
+    /* ── Solo avantage ── */
+    .solo-banner {
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .solo-banner h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: .75rem;
+    }
+    .solo-banner p {
+      color: rgba(255,255,255,.7);
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+    .solo-points {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .solo-point {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .9rem;
+      color: rgba(255,255,255,.85);
+      line-height: 1.5;
+    }
+    .solo-point-icon {
+      color: #60A5FA;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    @media (max-width: 900px) {
+      .profile-layout { grid-template-columns: 1fr; }
+      .profile-photo-wrap { position: static; max-width: 280px; }
+      .solo-banner { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 110px 26px 1fr; gap: 0 .75rem; }
+      .timeline-date { font-size: .72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ Navigation ══════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-mark.svg" alt="" class="nav-logo-img" aria-hidden="true" />
+        ACCIT
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="dsi-externalisee.html">DSI externalisée</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://calendar.app.google/eNuM4sdfJsq8MuJr5" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">Prendre rendez-vous</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══ Hero page ══════════════════════════════════════ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag">À propos d'ACCIT</span>
+        <h1>20 ans dans les grandes structures.<br />Maintenant au service des PME.</h1>
+        <p>IBM, Capgemini, Decathlon — j'ai piloté l'IT de l'intérieur. Ce que j'apporte à vos côtés, c'est cette expérience terrain, sans l'intermédiaire et sans le tarif d'un grand cabinet.</p>
+      </div>
+    </section>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <div class="container">
+        <a href="index.html">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">À propos</span>
+      </div>
+    </nav>
+
+    <!-- ══ Profil Alexandre ════════════════════════════════ -->
+    <section class="section" id="alexandre" aria-labelledby="profil-title">
+      <div class="container">
+        <div class="profile-layout">
+
+          <!-- Photo ── -->
+          <div class="profile-photo-wrap">
+            <img
+              src="images/photo-alexandre.jpg"
+              alt="Alexandre Chadenat — fondateur d'ACCIT"
+              class="profile-photo"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Bio ── -->
+          <div>
+            <span class="tag">Fondateur</span>
+            <h2 class="profile-name" id="profil-title">Alexandre Chadenat</h2>
+            <p class="profile-title">Ingénieur IT — DSI externalisé & Consultant senior</p>
+
+            <div class="profile-bio">
+              <p>
+                Ingénieur diplômé de l'ESIGELEC, j'ai passé plus de 20 ans à piloter des projets IT d'envergure au sein de trois grands noms : <strong>IBM</strong>, où j'ai géré des projets d'infrastructure multi-sites à Paris ; <strong>Capgemini</strong>, où j'ai encadré des équipes de delivery et introduit les méthodes agiles ; et enfin <strong>Decathlon</strong>, où je suis passé de chef de projet à responsable des opérations IT pour l'ensemble de la France.
+              </p>
+              <p>
+                Chez Decathlon, j'ai notamment coordonné le déploiement d'un SI couvrant plus de <strong>1 000 magasins</strong>, managé des équipes d'experts (architectes, développeurs, chefs de projet), piloté des programmes produits à l'international, et assuré la continuité opérationnelle des infrastructures IT selon les standards ITIL.
+              </p>
+              <p>
+                En créant ACCIT, j'ai fait un choix simple : mettre cette expérience au service des dirigeants de PME. Pas via un grand cabinet avec des équipes tournantes — directement. <strong>Vous n'avez qu'un interlocuteur, c'est moi, et c'est moi qui travaille sur votre dossier.</strong>
+              </p>
+            </div>
+
+            <!-- Tags compétences ── -->
+            <div style="display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.5rem;">
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">IT Operations & Infrastructure</span>
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">DSI externalisé</span>
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">ITIL</span>
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">Gestion de projet & méthodes agiles</span>
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">Pilotage OKR / KPI / SLA</span>
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">Cybersécurité</span>
+              <span style="background:var(--color-bg-alt); border:1px solid var(--color-border-subtle); border-radius:999px; padding:.35rem .9rem; font-size:.8rem; font-weight:600; color:var(--color-primary);">Cloud & Infrastructure</span>
+            </div>
+
+            <!-- Métriques ── -->
+            <div class="cards-grid" style="grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;" aria-hidden="true">
+              <div class="metric-card dark">
+                <strong>20+</strong>
+                <span>ans d'expérience IT</span>
+              </div>
+              <div class="metric-card">
+                <strong>1 000+</strong>
+                <span>sites pilotés (Decathlon)</span>
+              </div>
+              <div class="metric-card dark">
+                <strong>IBM · Capgemini · Decathlon</strong>
+                <span>Les maisons qui m'ont formé</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Avantage solo ══════════════════════════════════ -->
+    <section class="section section-alt" aria-labelledby="solo-title">
+      <div class="container">
+        <div class="solo-banner">
+          <div>
+            <h3 id="solo-title">Un seul interlocuteur.<br />Toujours le bon niveau.</h3>
+            <p>Avec ACCIT, vous ne passez jamais par un commercial ou un chef de projet junior. Vous parlez directement au consultant qui connaît votre dossier — et qui a déjà résolu ce type de problème à grande échelle.</p>
+          </div>
+          <div class="solo-points">
+            <div class="solo-point">
+              <span class="solo-point-icon">✓</span>
+              <span>Le même expert du premier rendez-vous jusqu'à la livraison</span>
+            </div>
+            <div class="solo-point">
+              <span class="solo-point-icon">✓</span>
+              <span>Une réactivité que les grands cabinets ne peuvent pas offrir</span>
+            </div>
+            <div class="solo-point">
+              <span class="solo-point-icon">✓</span>
+              <span>20 ans d'expérience dans vos problématiques — sans overhead</span>
+            </div>
+            <div class="solo-point">
+              <span class="solo-point-icon">✓</span>
+              <span>Aucun conflit d'intérêt : je ne revends pas de produits</span>
+            </div>
+            <div class="solo-point">
+              <span class="solo-point-icon">✓</span>
+              <span>Basé à Marcq-en-Barœul, disponible partout en France</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Parcours ═══════════════════════════════════════ -->
+    <section class="section" id="parcours" aria-labelledby="parcours-title">
+      <div class="container">
+        <header class="section-header centered">
+          <span class="tag">Parcours</span>
+          <h2 class="section-title" id="parcours-title">Ce que 20 ans de terrain m'ont appris</h2>
+          <p class="section-sub">De la gestion de projets d'infrastructure multi-sites à la direction des opérations IT d'une enseigne internationale — chaque étape m'a préparé à ce que font vraiment vos systèmes d'information.</p>
+        </header>
+
+        <div style="max-width:700px; margin-inline:auto;">
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-date">depuis mars 2026</div>
+              <div class="timeline-stem" aria-hidden="true">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-company">ACCIT — Marcq-en-Barœul</p>
+                <p class="timeline-role">Fondateur & DSI externalisé</p>
+                <p class="timeline-desc">Création d'ACCIT pour mettre 20 ans d'expertise IT au service des dirigeants de PME : DSI externalisée, cybersécurité, infogérance, conseil stratégique.</p>
+              </div>
+            </div>
+
+            <!-- Decathlon — entrée groupée -->
+            <div class="timeline-item">
+              <div class="timeline-date">2011 → 2025</div>
+              <div class="timeline-stem" aria-hidden="true">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-company">Decathlon — Lille / International</p>
+                <p class="timeline-desc">14 ans de progression au sein d'une enseigne mondiale, du pilotage de projets SI à la direction des opérations IT pour toute la France.</p>
+                <div class="timeline-subroles">
+                  <div>
+                    <p class="timeline-subrole-period">2023 – 2025</p>
+                    <p class="timeline-subrole-role">Operations Manager IT</p>
+                    <p class="timeline-subrole-desc">Maintien en condition opérationnelle des infrastructures IT pour l'ensemble des magasins et sites de service en France. Pilotage de la performance (OKR, KPI, SLA), mise en œuvre des bonnes pratiques ITIL.</p>
+                  </div>
+                  <div>
+                    <p class="timeline-subrole-period">2021 – 2023</p>
+                    <p class="timeline-subrole-role">Product & Program Manager</p>
+                    <p class="timeline-subrole-desc">Pilotage du programme de gestion de l'information produit à l'échelle internationale. Benchmark de solutions marché (Akeneo, Stibo, Syndigo), coordination des acteurs métiers et techniques.</p>
+                  </div>
+                  <div>
+                    <p class="timeline-subrole-period">2017 – 2021</p>
+                    <p class="timeline-subrole-role">IT Team Manager</p>
+                    <p class="timeline-subrole-desc">Management d'équipes d'experts IT (architectes, développeurs, chefs de projet). Gestion du budget, recrutement et pilotage de la performance durable du domaine.</p>
+                  </div>
+                  <div>
+                    <p class="timeline-subrole-period">2011 – 2017</p>
+                    <p class="timeline-subrole-role">Project Leader</p>
+                    <p class="timeline-subrole-desc">Pilotage de l'évolution du SI pour intégrer plus de 1 000 magasins. Refonte des applications mobiles (API-first, natif), gouvernance projet IT et gestion du changement.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2008 → 2011</div>
+              <div class="timeline-stem" aria-hidden="true">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-company">Capgemini — Lille</p>
+                <p class="timeline-role">Delivery Manager</p>
+                <p class="timeline-desc">Encadrement des équipes de delivery et de maintenance applicative. Mise en place des méthodologies agiles (Kanban), coordination des prestations et suivi qualité.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2002 → 2008</div>
+              <div class="timeline-stem" aria-hidden="true">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-company">IBM — Paris</p>
+                <p class="timeline-role">Project Manager</p>
+                <p class="timeline-desc">Gestion de projets IT d'envergure dans le domaine des infrastructures. Encadrement d'équipes techniques, coordination multi-sites, gestion de budgets et pilotage de la performance.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">1998 → 2001</div>
+              <div class="timeline-stem" aria-hidden="true">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-company">ESIGELEC — Rouen</p>
+                <p class="timeline-role">Formation d'ingénieur</p>
+                <p class="timeline-desc">École d'ingénieurs spécialisée en génie électrique, électronique et informatique. Diplôme d'ingénieur obtenu en 2001.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Valeurs ════════════════════════════════════════ -->
+    <section class="section section-alt" id="valeurs" aria-labelledby="valeurs-title">
+      <div class="container">
+        <header class="section-header centered">
+          <span class="tag">Mes engagements</span>
+          <h2 class="section-title" id="valeurs-title">Ce que je ne négocie pas</h2>
+        </header>
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">🤝</div>
+            <h3>Transparence totale</h3>
+            <p>Vous recevez un rapport mensuel en français courant. Si quelque chose ne fonctionne pas, vous le saurez avant de le découvrir vous-même.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">⚡</div>
+            <h3>Réactivité sans exception</h3>
+            <p>Votre activité n'a pas d'horaires. Les incidents critiques sont traités en priorité — directement par moi, pas par un centre d'appels.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">💡</div>
+            <h3>Indépendance totale</h3>
+            <p>Je ne suis revendeur de rien. Mes recommandations sont dictées par vos intérêts — pas par les marges que je ferais sur un produit.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">🌱</div>
+            <h3>Vous rendre autonomes</h3>
+            <p>Je forme vos équipes et documente votre SI. Un bon partenaire ne crée pas de dépendance — il la réduit.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">📊</div>
+            <h3>Des résultats mesurables</h3>
+            <p>Chaque intervention, chaque projet, chaque mois : vous avez des chiffres concrets. Pas des promesses et des bilans flatteurs.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">🏭</div>
+            <h3>L'expérience du terrain</h3>
+            <p>J'ai vécu vos problèmes de l'intérieur, à grande échelle. Ce que je vous conseille, je l'ai déjà mis en œuvre — pas seulement théorisé.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ═══════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="cta-apropos-title">
+      <div class="container">
+        <div class="cta-banner">
+          <h2 id="cta-apropos-title">Vous cherchez un partenaire IT senior — pas un prestataire de plus ?</h2>
+          <p>30 minutes pour faire le point sur votre situation. Je vous dis franchement si je peux vous aider — et si ce n'est pas le cas, je vous oriente vers qui peut l'être.</p>
+          <a href="https://calendar.app.google/eNuM4sdfJsq8MuJr5" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:1.05rem; padding:.85rem 2.5rem;">Réserver un créneau</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ Footer ══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/logo-mark.svg" alt="" class="nav-logo-img" aria-hidden="true" />
+            ACCIT
+          </a>
+          <p>L'IT qui travaille pour votre entreprise. Depuis 2025, aux côtés des dirigeants de PME.</p>
+        </div>
+        <nav aria-label="Services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="dsi-externalisee.html">DSI externalisée</a></li>
+            <li><a href="services.html#cybersecurite">Cybersécurité</a></li>
+            <li><a href="services.html#cloud">Cloud & Infra</a></li>
+            <li><a href="services.html#infogerance">Infogérance</a></li>
+            <li><a href="services.html#conseil">Conseil IT</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Entreprise">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="a-propos.html#parcours">Mon parcours</a></li>
+            <li><a href="a-propos.html#valeurs">Mes valeurs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+33679426621">06 79 42 66 21</a></li>
+            <li><a href="mailto:contact@accit.fr">contact@accit.fr</a></li>
+            <li style="color:rgba(255,255,255,.5); font-size:.9rem; margin-top:.5rem;">Marcq-en-Barœul — Nord<br />Lun–Ven 9h00–18h00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ACCIT. Tous droits réservés.</span>
+        <span>
+          <a href="mentions-legales.html">Mentions légales</a> ·
+          <a href="mentions-legales.html#politique-confidentialite">Politique de confidentialité</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

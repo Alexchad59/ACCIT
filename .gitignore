@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Éditeurs
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporaires
+/tmp/

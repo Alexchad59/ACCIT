@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions légales & Politique de confidentialité — ACCIT</title>
+  <meta name="description" content="Mentions légales et politique de confidentialité du site ACCIT — conseil en systèmes d'information pour PME." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Page-specific styles ── */
+    .legal-hero {
+      background: var(--color-navy);
+      color: #fff;
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+    }
+    .legal-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .75rem;
+    }
+    .legal-hero p {
+      color: rgba(255,255,255,.6);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Anchor tabs */
+    .legal-tabs {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+    .legal-tabs-inner {
+      display: flex;
+      gap: 0;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .legal-tabs-inner a {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .legal-tabs-inner a:hover,
+    .legal-tabs-inner a.active {
+      color: var(--color-navy);
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* Content layout */
+    .legal-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* Section titles */
+    .legal-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 130px;
+    }
+    .legal-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      padding-bottom: .75rem;
+      border-bottom: 2px solid var(--color-accent);
+      margin-bottom: 2rem;
+    }
+    .legal-section h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 2rem 0 .5rem;
+    }
+    .legal-section p,
+    .legal-section li {
+      font-size: .97rem;
+      line-height: 1.75;
+      color: var(--color-text);
+    }
+    .legal-section ul {
+      padding-left: 1.25rem;
+      margin: .5rem 0 1rem;
+    }
+    .legal-section ul li {
+      margin-bottom: .35rem;
+    }
+    .legal-section a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+    .legal-section a:hover {
+      color: var(--color-navy);
+    }
+
+    /* Identity table */
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: .95rem;
+    }
+    .legal-table tr {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .legal-table tr:last-child {
+      border-bottom: none;
+    }
+    .legal-table th {
+      text-align: left;
+      padding: .7rem 1rem .7rem 0;
+      font-weight: 600;
+      color: var(--color-text-light);
+      width: 220px;
+      vertical-align: top;
+    }
+    .legal-table td {
+      padding: .7rem 0;
+      color: var(--color-text);
+      vertical-align: top;
+    }
+
+    /* Info box */
+    .legal-info-box {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-size: .93rem;
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ Navigation ══════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-mark.svg" alt="" class="nav-logo-img" aria-hidden="true" />
+        ACCIT
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="dsi-externalisee.html">DSI externalisée</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://calendar.app.google/eNuM4sdfJsq8MuJr5" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">Prendre rendez-vous</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══ Hero ════════════════════════════════════════════ -->
+    <section class="legal-hero">
+      <div class="container">
+        <h1>Mentions légales &amp; confidentialité</h1>
+        <p>Dernière mise à jour : avril 2026</p>
+      </div>
+    </section>
+
+    <!-- ══ Tabs ════════════════════════════════════════════ -->
+    <div class="legal-tabs" role="navigation" aria-label="Sections de la page">
+      <div class="legal-tabs-inner">
+        <a href="#mentions-legales">Mentions légales</a>
+        <a href="#politique-confidentialite">Politique de confidentialité</a>
+      </div>
+    </div>
+
+    <!-- ══ Content ══════════════════════════════════════════ -->
+    <div class="legal-body">
+
+      <!-- MENTIONS LÉGALES -->
+      <section class="legal-section" id="mentions-legales">
+        <h2>Mentions légales</h2>
+
+        <h3>Éditeur du site</h3>
+        <table class="legal-table">
+          <tbody>
+            <tr>
+              <th>Raison sociale</th>
+              <td>ACCIT</td>
+            </tr>
+            <tr>
+              <th>Forme juridique</th>
+              <td>SARL — Société à responsabilités limitées</td>
+            </tr>
+            <tr>
+              <th>Siège social</th>
+              <td>70 Rue du Cheval Blanc, 59700 Marcq-en-Barœul, France</td>
+            </tr>
+            <tr>
+              <th>SIREN</th>
+              <td>100 997 675</td>
+            </tr>
+            <tr>
+              <th>SIRET (siège)</th>
+              <td>100 997 675 00010</td>
+            </tr>
+            <tr>
+              <th>Code NAF / APE</th>
+              <td>6202A</td>
+            </tr>
+            <tr>
+              <th>N° TVA intracommunautaire</th>
+              <td>FR54100997675</td>
+            </tr>
+            <tr>
+              <th>Date d'inscription (INSEE)</th>
+              <td>10/02/2026</td>
+            </tr>
+            <tr>
+              <th>Activité</th>
+              <td>Conseil en systèmes d'information</td>
+            </tr>
+            <tr>
+              <th>Responsable de la publication</th>
+              <td>Alexandre Chadenat</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Contact</h3>
+        <p>
+          Email : <a href="mailto:contact@accit.fr">contact@accit.fr</a><br />
+          Tél. : <a href="tel:+33679426621">+33 6 79 42 66 21</a>
+        </p>
+
+        <h3>Hébergement</h3>
+        <p>Le site est hébergé par <strong>OVH</strong> — 2 rue Kellermann, 59100 Roubaix, France — <a href="https://www.ovh.com" target="_blank" rel="noopener noreferrer">www.ovh.com</a>.</p>
+
+        <h3>Création</h3>
+        <p>Site conçu et développé par <strong>ACCIT</strong>.</p>
+
+        <h3>Propriété intellectuelle</h3>
+        <p>
+          Le contenu du site (textes, images, graphismes, logos, structure) est protégé par le droit d'auteur.
+          Toute reproduction totale ou partielle sans autorisation écrite préalable d'ACCIT est interdite.
+        </p>
+
+        <h3>Responsabilité</h3>
+        <p>
+          Les informations publiées sur ce site ont un caractère informatif général. ACCIT s'efforce d'assurer
+          l'exactitude des informations diffusées, mais ne peut garantir leur exhaustivité ni l'absence d'erreurs.
+          ACCIT ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site.
+        </p>
+
+        <h3>Liens externes</h3>
+        <p>
+          Le site peut contenir des liens hypertextes vers des sites tiers. ACCIT décline toute responsabilité
+          quant au contenu ou aux pratiques de protection des données de ces sites.
+        </p>
+      </section>
+
+      <!-- POLITIQUE DE CONFIDENTIALITÉ -->
+      <section class="legal-section" id="politique-confidentialite">
+        <h2>Politique de confidentialité (RGPD)</h2>
+
+        <h3>Responsable du traitement</h3>
+        <div class="legal-info-box">
+          <strong>ACCIT</strong> — 70 Rue du Cheval Blanc, 59700 Marcq-en-Barœul, France<br />
+          Responsable : Alexandre Chadenat<br />
+          Contact RGPD : <a href="mailto:contact@accit.fr">contact@accit.fr</a>
+        </div>
+
+        <h3>Données collectées</h3>
+        <ul>
+          <li><strong>Données de contact</strong> : nom, prénom, adresse email, numéro de téléphone (formulaires de contact et de prise de rendez-vous).</li>
+          <li><strong>Données de projet</strong> : informations partagées dans le cadre de demandes de devis ou de conseil en informatique.</li>
+          <li><strong>Données techniques</strong> : journaux de connexion (logs), adresse IP, type de navigateur, pages consultées.</li>
+        </ul>
+
+        <h3>Finalités</h3>
+        <p>Les données sont collectées et traitées pour :</p>
+        <ul>
+          <li>Répondre aux demandes transmises via le site (informations, devis).</li>
+          <li>Conclure et exécuter des prestations de conseil en informatique.</li>
+          <li>Assurer la sécurité et le bon fonctionnement du site.</li>
+          <li>Produire des statistiques anonymes de fréquentation.</li>
+        </ul>
+
+        <h3>Base légale</h3>
+        <p>Les traitements sont fondés sur :</p>
+        <ul>
+          <li>L'exécution de mesures précontractuelles et contractuelles ;</li>
+          <li>L'intérêt légitime d'ACCIT (gestion et sécurité du site) ;</li>
+          <li>Le consentement de l'utilisateur pour les cookies facultatifs.</li>
+        </ul>
+
+        <h3>Destinataires</h3>
+        <p>
+          Les données peuvent être accessibles aux personnes habilitées au sein d'ACCIT, ainsi qu'aux prestataires
+          techniques intervenant pour l'hébergement et la maintenance du site.
+          <strong>Aucune cession commerciale de données n'est réalisée.</strong>
+        </p>
+
+        <h3>Durée de conservation</h3>
+        <ul>
+          <li><strong>Données de contact</strong> : 3 ans à compter du dernier contact.</li>
+          <li><strong>Données clients (contrats)</strong> : durée de la relation contractuelle + 5 ans.</li>
+          <li><strong>Logs techniques</strong> : 12 mois maximum.</li>
+        </ul>
+
+        <h3>Cookies</h3>
+        <p>
+          Le site utilise des cookies strictement nécessaires à son fonctionnement et, le cas échéant, des cookies
+          d'analyse de fréquentation. Les cookies facultatifs sont soumis à votre consentement via le bandeau
+          affiché lors de votre première visite.
+        </p>
+
+        <h3>Droits des personnes</h3>
+        <p>
+          Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679),
+          vous disposez des droits suivants sur vos données personnelles :
+        </p>
+        <ul>
+          <li>Droit d'<strong>accès</strong> à vos données ;</li>
+          <li>Droit de <strong>rectification</strong> en cas d'inexactitude ;</li>
+          <li>Droit à l'<strong>effacement</strong> (« droit à l'oubli ») ;</li>
+          <li>Droit d'<strong>opposition</strong> au traitement ;</li>
+          <li>Droit à la <strong>limitation</strong> du traitement ;</li>
+          <li>Droit à la <strong>portabilité</strong> de vos données.</li>
+        </ul>
+        <p>
+          Pour exercer ces droits, écrivez à : <a href="mailto:contact@accit.fr">contact@accit.fr</a>.
+          Nous nous engageons à répondre dans un délai d'un mois.
+        </p>
+
+        <h3>Réclamation</h3>
+        <p>
+          En cas de litige relatif au traitement de vos données personnelles, vous pouvez saisir la Commission
+          Nationale de l'Informatique et des Libertés (CNIL) :
+          <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.
+        </p>
+      </section>
+
+    </div><!-- /.legal-body -->
+
+  </main>
+
+  <!-- ══ Footer ══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/logo-mark.svg" alt="" class="nav-logo-img" aria-hidden="true" />
+            ACCIT
+          </a>
+          <p>L'IT qui travaille pour votre entreprise. Depuis 2026, aux côtés des dirigeants de PME.</p>
+        </div>
+        <nav aria-label="Services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="dsi-externalisee.html">DSI externalisée</a></li>
+            <li><a href="services.html#temps-dirigeant">Libérer du temps</a></li>
+            <li><a href="services.html#couts">Optimiser les coûts</a></li>
+            <li><a href="services.html#productivite">Améliorer la productivité</a></li>
+            <li><a href="services.html#projets">Gestion de projets IT</a></li>
+            <li><a href="services.html#strategie">Stratégie IT</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Entreprise">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="a-propos.html#parcours">Mon parcours</a></li>
+            <li><a href="a-propos.html#valeurs">Mes valeurs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+33679426621">06 79 42 66 21</a></li>
+            <li><a href="mailto:contact@accit.fr">contact@accit.fr</a></li>
+            <li style="color:rgba(255,255,255,.5); font-size:.9rem; margin-top:.5rem;">Marcq-en-Barœul — Nord<br />Lun–Ven 9h00–18h00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ACCIT. Tous droits réservés.</span>
+        <span>
+          <a href="mentions-legales.html">Mentions légales</a> ·
+          <a href="mentions-legales.html#politique-confidentialite">Politique de confidentialité</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Highlight active tab based on scroll position
+    (function () {
+      const tabs = document.querySelectorAll('.legal-tabs-inner a');
+      const sections = Array.from(tabs).map(a => document.querySelector(a.getAttribute('href')));
+
+      function updateActive() {
+        let current = 0;
+        sections.forEach((sec, i) => {
+          if (sec && window.scrollY >= sec.offsetTop - 160) current = i;
+        });
+        tabs.forEach((t, i) => t.classList.toggle('active', i === current));
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      updateActive();
+    })();
+  </script>
+</body>
+</html>

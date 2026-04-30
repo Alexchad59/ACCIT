@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167 127" fill="#1B3570" role="img" aria-label="ACCIT">
+  <!-- A : barre gauche (diagonale pleine hauteur) -->
+  <polygon points="45,1 74,1 31,126 1,126"/>
+  <!-- A : barre droite partielle (apex → barre transversale) -->
+  <polygon points="74,1 102,1 131,85 103,85"/>
+  <!-- A : barre transversale -->
+  <polygon points="15,85 103,85 95,102 8,102"/>
+  <!-- C : arc épais
+       centre (105,68), R_ext=61, R_int=40, ouverture ±62°
+       cos62°=0.469 sin62°=0.883
+       haut ext (133.6,14.1)  bas ext (133.6,121.9)
+       haut int (123.8,32.7)  bas int (123.8,103.3) -->
+  <path d="M 133.6,14.1 A 61,61 0 1 1 133.6,121.9 L 123.8,103.3 A 40,40 0 1 0 123.8,32.7 Z"/>
+</svg>
