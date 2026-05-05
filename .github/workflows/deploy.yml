@@ -1,0 +1,23 @@
+name: Déploiement FTP sur OVH
+
+on:
+  push:
+    branches:
+      - main  # Se déclenche à chaque push sur la branche main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v3
+
+      - name: Déployer via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./         # Dossier local à envoyer (racine du repo)
+          server-dir: /www/     # Dossier de destination sur OVH
