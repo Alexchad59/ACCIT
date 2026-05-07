@@ -132,9 +132,18 @@ $htmlNotif = <<<HTML
       <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
         <!-- Header -->
         <tr>
-          <td style="background:#071729;padding:28px 36px;">
-            <p style="margin:0;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.02em;">ACCIT</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,.5);">Nouveau contact depuis accit.fr</p>
+          <td style="background:#071729;padding:24px 36px;">
+            <table cellpadding="0" cellspacing="0" style="margin-bottom:6px;">
+              <tr>
+                <td style="vertical-align:middle;padding-right:10px;">
+                  <img src="https://accit.fr/images/logo-mark.svg" width="38" height="29" alt="" style="display:block;filter:brightness(0) invert(1);" />
+                </td>
+                <td style="vertical-align:middle;">
+                  <p style="margin:0;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.02em;">ACCIT</p>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:0;font-size:13px;color:rgba(255,255,255,.5);">Nouveau contact depuis accit.fr</p>
           </td>
         </tr>
         <!-- Body -->
@@ -203,9 +212,18 @@ $htmlConfirm = <<<HTML
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
         <tr>
-          <td style="background:#071729;padding:28px 36px;">
-            <p style="margin:0;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.02em;">ACCIT</p>
-            <p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,.5);">Conseil en systèmes d'information</p>
+          <td style="background:#071729;padding:24px 36px;">
+            <table cellpadding="0" cellspacing="0" style="margin-bottom:6px;">
+              <tr>
+                <td style="vertical-align:middle;padding-right:10px;">
+                  <img src="https://accit.fr/images/logo-mark.svg" width="38" height="29" alt="" style="display:block;filter:brightness(0) invert(1);" />
+                </td>
+                <td style="vertical-align:middle;">
+                  <p style="margin:0;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.02em;">ACCIT</p>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:0;font-size:13px;color:rgba(255,255,255,.5);">Conseil en systèmes d'information</p>
           </td>
         </tr>
         <tr>
