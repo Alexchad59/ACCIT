@@ -27,22 +27,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Formulaire de contact ─────────────────────────────── */
   const form = document.getElementById('contact-form');
-  form?.addEventListener('submit', e => {
+  form?.addEventListener('submit', async e => {
     e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
     const btn = form.querySelector('[type=submit]');
-    btn.textContent = 'Message envoyé ✓';
+    const originalText = btn.textContent;
     btn.disabled = true;
-    btn.style.background = '#16A34A';
-    setTimeout(() => {
-      btn.textContent = 'Envoyer le message';
+    btn.textContent = 'Envoi en cours…';
+
+    // Collecte des données + honeypot anti-spam
+    const data = {
+      prenom:    form.prenom.value.trim(),
+      nom:       form.nom.value.trim(),
+      email:     form.email.value.trim(),
+      telephone: form.telephone.value.trim(),
+      societe:   form.societe.value.trim(),
+      sujet:     form.sujet.value,
+      message:   form.message.value.trim(),
+      rgpd:      form.rgpd.checked,
+      website:   form.website?.value ?? '', // honeypot
+    };
+
+    try {
+      const res  = await fetch('send-contact.php', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(data),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        btn.textContent = 'Message envoyé ✓';
+        btn.style.background = '#16A34A';
+        form.reset();
+        // Affiche un message de succès sous le bouton
+        let msg = form.querySelector('.form-feedback');
+        if (!msg) {
+          msg = document.createElement('p');
+          msg.className = 'form-feedback';
+          msg.style.cssText = 'margin-top:.75rem;font-size:.875rem;color:#16A34A;font-weight:600;';
+          btn.parentNode.insertBefore(msg, btn.nextSibling);
+        }
+        msg.textContent = json.message;
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          btn.style.background = '';
+          msg.textContent = '';
+        }, 6000);
+      } else {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert(json.message || 'Une erreur est survenue. Veuillez réessayer.');
+      }
+    } catch {
+      btn.textContent = originalText;
       btn.disabled = false;
-      btn.style.background = '';
-      form.reset();
-    }, 4000);
+      alert('Impossible d\'envoyer le message. Vérifiez votre connexion et réessayez.');
+    }
   });
 
   /* ── Scroll reveal (Intersection Observer) ─────────────── */

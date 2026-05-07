@@ -13,3 +13,6 @@
 
 # Temporaires
 /tmp/
+
+# ⚠️  Fichiers sensibles — ne jamais versionner
+config.php

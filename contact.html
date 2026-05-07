@@ -134,6 +134,11 @@
             </div>
 
             <form id="contact-form" novalidate>
+              <!-- Honeypot anti-spam : invisible pour les humains -->
+              <div style="display:none;" aria-hidden="true">
+                <label for="website">Ne pas remplir</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="prenom">Prénom *</label>
