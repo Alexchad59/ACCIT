@@ -136,7 +136,7 @@ $htmlNotif = <<<HTML
             <table cellpadding="0" cellspacing="0" style="margin-bottom:6px;">
               <tr>
                 <td style="vertical-align:middle;padding-right:10px;">
-                  <img src="https://accit.fr/images/logo-mark.svg" width="38" height="29" alt="" style="display:block;filter:brightness(0) invert(1);" />
+                  <img src="https://accit.fr/images/logo-mark-white.svg" width="38" height="29" alt="" style="display:block;" />
                 </td>
                 <td style="vertical-align:middle;">
                   <p style="margin:0;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.02em;">ACCIT</p>
@@ -216,7 +216,7 @@ $htmlConfirm = <<<HTML
             <table cellpadding="0" cellspacing="0" style="margin-bottom:6px;">
               <tr>
                 <td style="vertical-align:middle;padding-right:10px;">
-                  <img src="https://accit.fr/images/logo-mark.svg" width="38" height="29" alt="" style="display:block;filter:brightness(0) invert(1);" />
+                  <img src="https://accit.fr/images/logo-mark-white.svg" width="38" height="29" alt="" style="display:block;" />
                 </td>
                 <td style="vertical-align:middle;">
                   <p style="margin:0;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.02em;">ACCIT</p>
